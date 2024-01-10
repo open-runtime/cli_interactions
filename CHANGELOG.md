@@ -1,3 +1,6 @@
+## 2.3.0
+- add failed state to 'Spinner' and 'MultiSpinner'
+
 ## 2.2.0
 
 - Update sdk and dependencies to the most recent ones

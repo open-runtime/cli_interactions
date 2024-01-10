@@ -1,4 +1,4 @@
-import 'package:interact/interact.dart' show Spinner, reset;
+import 'package:interact_cli/interact_cli.dart' show Spinner, reset;
 
 Future<void> main() async {
   try {

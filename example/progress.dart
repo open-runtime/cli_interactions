@@ -1,4 +1,4 @@
-import 'package:interact/interact.dart' show Progress, Theme;
+import 'package:interact_cli/interact_cli.dart' show Progress, Theme;
 
 Future<void> main() async {
   const length = 1000;

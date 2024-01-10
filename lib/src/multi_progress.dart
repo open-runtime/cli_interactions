@@ -1,5 +1,5 @@
-import 'package:interact/src/framework/framework.dart';
-import 'package:interact/src/progress.dart';
+import 'package:interact_cli/src/framework/framework.dart';
+import 'package:interact_cli/src/progress.dart';
 
 /// A shared context and handler for rendering multiple [Progress] bars.
 class MultiProgress {

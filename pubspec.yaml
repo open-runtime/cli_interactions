@@ -1,8 +1,7 @@
-name: interact
+name: interact_cli
 description: A collection of customizable interactive command-line components.
 version: 2.3.0
-repository: https://github.com/frencojobs/interact
-publish_to: none
+repository: https://github.com/payam-zahedi/interact
 
 environment:
   sdk: ">=3.1.2 <4.0.0"

@@ -1,9 +1,9 @@
 import 'dart:async' show StreamSubscription, Timer;
 import 'dart:io' show ProcessSignal;
 
-import 'package:interact/src/framework/framework.dart';
-import 'package:interact/src/theme/theme.dart';
-import 'package:interact/src/utils/utils.dart';
+import 'package:interact_cli/src/framework/framework.dart';
+import 'package:interact_cli/src/theme/theme.dart';
+import 'package:interact_cli/src/utils/utils.dart';
 
 String _prompt(SpinnerStateType _) => '';
 

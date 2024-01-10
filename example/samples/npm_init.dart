@@ -1,7 +1,7 @@
 import 'dart:convert' show JsonEncoder;
 import 'dart:io' show exit, stderr, stdout;
 
-import 'package:interact/interact.dart';
+import 'package:interact_cli/interact_cli.dart';
 
 void main() {
   final theme = Theme.basicTheme;

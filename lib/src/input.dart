@@ -1,6 +1,6 @@
-import 'package:interact/src/framework/framework.dart';
-import 'package:interact/src/theme/theme.dart';
-import 'package:interact/src/utils/prompt.dart';
+import 'package:interact_cli/src/framework/framework.dart';
+import 'package:interact_cli/src/theme/theme.dart';
+import 'package:interact_cli/src/utils/prompt.dart';
 
 /// The error message to be thrown from the [Input] component's
 /// validator when there is an error.

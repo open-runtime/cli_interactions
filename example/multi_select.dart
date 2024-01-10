@@ -1,6 +1,6 @@
 import 'dart:io' show stdout;
 
-import 'package:interact/interact.dart' show MultiSelect;
+import 'package:interact_cli/interact_cli.dart' show MultiSelect;
 
 void main() {
   final musicals = ['Hamilton', 'Dear Evan Hansen', 'Wicked'];

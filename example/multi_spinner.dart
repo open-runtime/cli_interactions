@@ -1,4 +1,4 @@
-import 'package:interact/interact.dart'
+import 'package:interact_cli/interact_cli.dart'
     show MultiSpinner, Spinner, SpinnerStateType;
 
 Future<void> main() async {

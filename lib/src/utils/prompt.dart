@@ -1,4 +1,4 @@
-import 'package:interact/src/theme/theme.dart';
+import 'package:interact_cli/src/theme/theme.dart';
 
 /// Generates a formatted input message to prompt.
 String promptInput({

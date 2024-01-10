@@ -1,4 +1,5 @@
-import 'package:interact/src/framework/framework.dart' show Context;
+import 'package:interact_cli/src/framework/framework.dart'
+    show Context;
 
 export 'src/confirm.dart';
 export 'src/input.dart';

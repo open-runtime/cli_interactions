@@ -1,6 +1,6 @@
-import 'package:interact/src/framework/framework.dart';
-import 'package:interact/src/theme/theme.dart';
-import 'package:interact/src/utils/prompt.dart';
+import 'package:interact_cli/src/framework/framework.dart';
+import 'package:interact_cli/src/theme/theme.dart';
+import 'package:interact_cli/src/utils/prompt.dart';
 
 /// A password input component.
 class Password extends Component<String> {
