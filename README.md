@@ -2,6 +2,15 @@
 
 A collection of customizable interactive command-line components.
 
+## Forked from [frencojobs/interact](https://github.com/frencojobs/interact)
+
+This repository is a fork of the original [interact](https://github.com/frencojobs/interact) created by [frencojobs](https://github.com/frencojobs/), which was licensed under the MIT License.
+
+##### Intent and Purpose
+
+I have forked this repository to continue its development and address maintenance issues since the original project is no longer actively maintained.
+
+
 <br>
 
 ## Table of Contents
@@ -288,3 +297,7 @@ try {
 ## Acknowledgement
 
 This library is mostly inspired by [dialouger](https://github.com/mitsuhiko/dialoguer) library from Rust. The lack of a properly maintained library for Dart with a well-made API is what pushed me into making this library.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE) as provided in the original repository.
