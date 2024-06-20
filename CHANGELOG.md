@@ -1,3 +1,6 @@
+## 2.4.0
+- upgrade dart_cli dependency
+
 ## 2.3.0
 - add failed state to 'Spinner' and 'MultiSpinner'
 

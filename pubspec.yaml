@@ -1,6 +1,6 @@
 name: interact_cli
 description: A collection of customizable interactive command-line components.
-version: 2.3.0
+version: 2.4.0
 repository: https://github.com/payam-zahedi/interact
 
 environment:
