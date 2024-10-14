@@ -1,7 +1,8 @@
-import 'package:dart_console/dart_console.dart';
-import 'package:interact_cli/src/framework/framework.dart';
-import 'package:interact_cli/src/theme/theme.dart';
-import 'package:interact_cli/src/utils/prompt.dart';
+import 'dart:io' show stdout;
+import 'package:dart_console/dart_console.dart' show ControlCharacter;
+import 'package:interact_cli/interact_cli.dart' show Theme;
+import 'package:interact_cli/src/framework/framework.dart' show Component, State;
+import 'package:interact_cli/src/utils/prompt.dart' show promptInput, promptSuccess;
 
 /// A multiple select or checkbox input component.
 class MultiSelect extends Component<List<int>> {
@@ -40,6 +41,7 @@ class MultiSelect extends Component<List<int>> {
 class _MultiSelectState extends State<MultiSelect> {
   late List<int> selection;
   late int index;
+  int offset = 0;
 
   @override
   void init() {
@@ -55,8 +57,8 @@ class _MultiSelectState extends State<MultiSelect> {
       if (component.defaults!.length != component.options.length) {
         throw Exception(
           'Default selections have a different length of '
-          '${component.defaults!.length} '
-          'than options of ${component.options.length}',
+              '${component.defaults!.length} '
+              'than options of ${component.options.length}',
         );
       } else {
         selection.addAll(
@@ -97,9 +99,20 @@ class _MultiSelectState extends State<MultiSelect> {
     super.dispose();
   }
 
+  int maxLength() {
+    final lines = stdout.terminalLines - 3;
+    return lines > component.options.length ? component.options.length : lines;
+  }
+
   @override
   void render() {
-    for (var i = 0; i < component.options.length; i++) {
+    final length = maxLength();
+    if (index >= offset + length) {
+      offset = index - length + 1;
+    } else if (index < offset) {
+      offset = index;
+    }
+    for (var i = offset; i < offset + length; i++) {
       final option = component.options[i];
       final line = StringBuffer();
 
@@ -140,10 +153,12 @@ class _MultiSelectState extends State<MultiSelect> {
             setState(() {
               index = (index - 1) % component.options.length;
             });
+            break;
           case ControlCharacter.arrowDown:
             setState(() {
               index = (index + 1) % component.options.length;
             });
+            break;
           case ControlCharacter.enter:
             return selection;
           default:

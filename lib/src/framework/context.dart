@@ -105,7 +105,7 @@ class Context {
       if (key.isControl) {
         switch (key.controlChar) {
           case ControlCharacter.enter:
-            writeln();
+            writeln("Returning... $buffer");
             return buffer;
           case ControlCharacter.backspace:
           case ControlCharacter.ctrlH:

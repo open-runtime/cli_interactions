@@ -1,3 +1,4 @@
+import 'package:dart_console/dart_console.dart';
 import 'package:interact_cli/src/framework/framework.dart';
 import 'package:interact_cli/src/theme/theme.dart';
 import 'package:interact_cli/src/utils/prompt.dart';
@@ -92,6 +93,7 @@ class _InputState extends State<Input> {
 
   @override
   String interact() {
+    // while last key is null or not a control key we continue
     while (true) {
       context.write(
         promptInput(
@@ -100,7 +102,9 @@ class _InputState extends State<Input> {
           hint: component.defaultValue,
         ),
       );
+
       final input = context.readLine(initialText: component.initialText);
+
       final line = input.isEmpty && component.defaultValue != null
           ? component.defaultValue!
           : input;
@@ -122,5 +126,7 @@ class _InputState extends State<Input> {
 
       return value!;
     }
+
+    return "NO INTERACTION";
   }
 }

@@ -1,7 +1,9 @@
-import 'package:dart_console/dart_console.dart';
-import 'package:interact_cli/src/framework/framework.dart';
-import 'package:interact_cli/src/theme/theme.dart';
-import 'package:interact_cli/src/utils/prompt.dart';
+import 'dart:io' show stdout;
+
+import 'package:dart_console/dart_console.dart' show ControlCharacter;
+import 'package:interact_cli/interact_cli.dart' show Select, Theme;
+import 'package:interact_cli/src/framework/framework.dart' show Component, State;
+import 'package:interact_cli/src/utils/prompt.dart' show promptInput, promptSuccess;
 
 /// A selector component.
 class Select extends Component<int> {
@@ -41,6 +43,7 @@ class Select extends Component<int> {
 
 class _SelectState extends State<Select> {
   int index = 0;
+  int offset = 0;
 
   @override
   void init() {
@@ -79,9 +82,20 @@ class _SelectState extends State<Select> {
     super.dispose();
   }
 
+  int maxLength() {
+    final lines = stdout.terminalLines - 3;
+    return lines > component.options.length ? component.options.length : lines;
+  }
+
   @override
   void render() {
-    for (var i = 0; i < component.options.length; i++) {
+    final length = maxLength();
+    if (index >= offset + length) {
+      offset = index - length + 1;
+    } else if (index < offset) {
+      offset = index;
+    }
+    for (var i = offset; i < offset + length; i++) {
       final option = component.options[i];
       final line = StringBuffer();
 
@@ -108,10 +122,12 @@ class _SelectState extends State<Select> {
           setState(() {
             index = (index - 1) % component.options.length;
           });
+          break;
         case ControlCharacter.arrowDown:
           setState(() {
             index = (index + 1) % component.options.length;
           });
+          break;
         case ControlCharacter.enter:
           return index;
         default:
